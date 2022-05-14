@@ -33,4 +33,11 @@ export default createGlobalStyle`
     p{
         cursor: default;
     }
+    iframe {
+        pointer-events: none;
+    }
+    *::selection {
+        background: #9241f9;
+        color: #fff;
+    }
 `
