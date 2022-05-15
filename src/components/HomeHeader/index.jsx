@@ -2,55 +2,35 @@ import { useState, useRef } from "react"
 import { Player } from "@lottiefiles/react-lottie-player"
 
 import { ReactComponent as SearchIcon } from "../../assets/icons/search.svg"
-import cartAnimation from "../../assets/animations/cartAnimation.json"
+import { ReactComponent as LogoIcon } from "../../assets/icons/logo.svg"
 import menuAnimation from "../../assets/animations/menuAnimation.json"
-import teste from "../../assets/images/teste.png"
 
 import * as S from "./styles"
 
 export default function HomeHeader() {
-	const cartRef = useRef(null)
 	const menuRef = useRef(null)
+	const logoRef = useRef(null)
 	return (
-		<>
-			<S.SalesContainer>
-				<img src={teste} alt="" />
-				<div className="ellipses-container">
-					<div className="ellipse"></div>
-					<div className="ellipse"></div>
-					<div className="ellipse"></div>
+		<S.Header>
+			<LogoIcon className="logo-icon" />
+			<S.SearchBarContainer>
+				<div className="search-icon-cointainer">
+					<SearchIcon className="search-icon" />
 				</div>
-			</S.SalesContainer>
-			<S.Header>
-				<S.SearchBarContainer>
-					<div className="search-icon-cointainer">
-						<SearchIcon className="search-icon" />
+				<input type="text" placeholder="Pesquisar..." />
+			</S.SearchBarContainer>
+			<S.SideIconsContainer>
+				<S.SideIconEllipse>
+					<div
+						className="menu-icon"
+						onClick={() => menuRef.current.play()}>
+						<Player
+							ref={menuRef}
+							src={menuAnimation}
+							style={S.Menu}></Player>
 					</div>
-					<input type="text" placeholder="Pesquisar..." />
-				</S.SearchBarContainer>
-				<S.SideIconsContainer>
-					<S.SideIconEllipse>
-						<div
-							className="cart-icon"
-							onClick={() => cartRef.current.play()}>
-							<Player
-								ref={cartRef}
-								src={cartAnimation}
-								style={S.Cart}></Player>
-						</div>
-					</S.SideIconEllipse>
-					<S.SideIconEllipse>
-						<div
-							className="menu-icon"
-							onClick={() => menuRef.current.play()}>
-							<Player
-								ref={menuRef}
-								src={menuAnimation}
-								style={S.Menu}></Player>
-						</div>
-					</S.SideIconEllipse>
-				</S.SideIconsContainer>
-			</S.Header>
-		</>
+				</S.SideIconEllipse>
+			</S.SideIconsContainer>
+		</S.Header>
 	)
 }

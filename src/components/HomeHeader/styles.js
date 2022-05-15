@@ -10,6 +10,11 @@ export const Header = styled.header`
 	justify-content: space-between;
 	background-color: transparent;
 	padding: 23px 12px;
+	.logo-icon {
+		width: 50px;
+		height: 50px;
+		margin-right: 15px;
+	}
 `
 export const SearchBarContainer = styled.div`
 	width: 100%;
@@ -18,7 +23,6 @@ export const SearchBarContainer = styled.div`
 	position: relative;
 	background-color: #fff;
 	border-radius: 5px;
-	margin-right: 28px;
 	input {
 		width: 100%;
 		height: 30px;
@@ -50,13 +54,13 @@ export const SideIconsContainer = styled.div`
 `
 export const SideIconEllipse = styled.div`
 	width: 35px;
-	height: 30px;
+	height: 33px;
 	border-radius: 50%;
 	background-color: #fff;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-left: 10px;
+	margin-left: 20px;
 `
 
 export const SalesContainer = styled.div`
@@ -87,11 +91,6 @@ export const SalesContainer = styled.div`
 		}
 	}
 `
-
-export const Cart = {
-	width: "30px",
-	height: "30px",
-}
 
 export const Menu = {
 	width: "20px",
