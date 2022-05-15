@@ -43,3 +43,27 @@ export const ProductPrice = styled.p`
 	font-weight: 500;
 	color: #333333;
 `
+export const HighlightProduct = styled.div`
+	width: calc(50% - 5px);
+	height: 240px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	background: #fff;
+	box-shadow: rgba(220, 220, 220, 0.45) 0px 5px 5px;
+	border-radius: 6px;
+	img {
+		width: 100%;
+		height: 110px;
+		object-fit: cover;
+	}
+	.line {
+		border-top: 3px solid #c4c4c4;
+		width: 30px;
+		margin: 8px auto;
+	}
+`

@@ -9,6 +9,8 @@ export const Main = styled.main`
 	padding: 0 5px;
 	font-family: "Inter", sans-serif;
 	margin-top: 60px;
+	margin-bottom: 70px;
+	overflow-x: hidden;
 `
 
 export const CategoriesContainer = styled.div`
@@ -53,10 +55,5 @@ export const HighlightsContainer = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	padding: 13px 0px 0 5px;
-	.highlight-product {
-		width: calc(50% - 5px);
-		margin-right: 5px;
-		margin-bottom: 5px;
-	}
 `
 export const Highlight = styled.div``

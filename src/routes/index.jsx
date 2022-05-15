@@ -8,6 +8,7 @@ export default function Router() {
 			<Routes>
 				<Route path="/" element={<Navigate to="/home" />} />
 				<Route path="/home" element={<Home />} />
+				<Route path="/product/:id" element={<Home />} />
 			</Routes>
 		</BrowserRouter>
 	)
