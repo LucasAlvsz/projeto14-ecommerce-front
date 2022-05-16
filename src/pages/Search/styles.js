@@ -8,7 +8,7 @@ export const Main = styled.main`
 	overflow-y: auto;
 	font-family: "Inter", sans-serif;
 	margin-top: 60px;
-	margin-bottom: 65px;
+	margin-bottom: 60px;
 `
 export const SearchResultsContainer = styled.div`
 	width: 100%;
