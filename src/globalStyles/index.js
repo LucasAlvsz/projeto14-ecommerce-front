@@ -6,7 +6,7 @@ export default createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         outline: 0;
-        font-family: 'Raleway', sans-serif;
+        font-family: 'Inter', sans-serif;
         
     }
     button {
@@ -22,7 +22,7 @@ export default createGlobalStyle`
         text-decoration: none;
     }
     body {
-        background: linear-gradient(300deg, rgba(225, 201, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%), #FFFFFF;
+        background: linear-gradient(180deg, rgba(225, 201, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%), #FFFFFF;
     }
     main{
         overflow: auto;
@@ -40,4 +40,9 @@ export default createGlobalStyle`
         background: #9241f9;
         color: #fff;
     }
+
+    ::-webkit-scrollbar {
+		width: 0px;
+    }
+	
 `

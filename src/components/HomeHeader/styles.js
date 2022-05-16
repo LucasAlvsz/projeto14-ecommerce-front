@@ -3,11 +3,18 @@ import styled from "styled-components"
 export const Header = styled.header`
 	width: 100%;
 	height: 60px;
-	background-color: transparent;
 	display: flex;
+	position: fixed;
+	top: 0;
 	align-items: center;
 	justify-content: space-between;
+	background-color: transparent;
 	padding: 23px 12px;
+	.logo-icon {
+		width: 50px;
+		height: 50px;
+		margin-right: 15px;
+	}
 `
 export const SearchBarContainer = styled.div`
 	width: 100%;
@@ -16,7 +23,6 @@ export const SearchBarContainer = styled.div`
 	position: relative;
 	background-color: #fff;
 	border-radius: 5px;
-	margin-right: 123px;
 	input {
 		width: 100%;
 		height: 30px;
@@ -39,3 +45,25 @@ export const SearchBarContainer = styled.div`
 		left: 9px;
 	}
 `
+export const SideIconsContainer = styled.div`
+	width: 80px;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+`
+export const SideIconEllipse = styled.div`
+	width: 35px;
+	height: 33px;
+	border-radius: 50%;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 20px;
+`
+
+export const Menu = {
+	width: "20px",
+	height: "20px",
+}
