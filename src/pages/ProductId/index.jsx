@@ -2,6 +2,7 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 
+import { getItem } from "../../utils"
 import ProductHeader from "../../components/ProductHeader"
 import ProductFooter from "../../components/ProductFooter"
 import { ReactComponent as BeforeIcon } from "../../assets/icons/before.svg"
@@ -20,6 +21,24 @@ export default function ProductId() {
 			.then(({ data }) => setProduct(data))
 			.catch(err => console.log(err))
 	}, [id])
+	const addToCart = () => {
+		const { token } = getItem("auth")
+		axios
+			.post(
+				`${process.env.REACT_APP_URI}/cart`,
+				{
+					productId: product._id,
+					quantity,
+				},
+				{
+					headers: {
+						Authorization: `Bearer ${token}`,
+					},
+				}
+			)
+			.then(() => console.log("Adicionado ao carrinho"))
+			.catch(err => console.log(err))
+	}
 	return (
 		<>
 			<ProductHeader />
@@ -93,7 +112,8 @@ export default function ProductId() {
 							/>
 							<p
 								onClick={() =>
-									quantity < 9999 && setQuantity(quantity + 1)
+									quantity < product.available &&
+									setQuantity(quantity + 1)
 								}>
 								+
 							</p>
@@ -122,7 +142,7 @@ export default function ProductId() {
 					</S.ProductDescriptions>
 				</S.ProductContainer>
 			</S.Main>
-			<ProductFooter />
+			<ProductFooter addToCart={addToCart} />
 		</>
 	)
 }

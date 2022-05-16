@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const HomeFooter = styled.footer`
+export const ProductFooter = styled.footer`
 	width: 100%;
 	height: 60px;
 	position: fixed;
@@ -13,6 +13,7 @@ export const HomeFooter = styled.footer`
 	background-color: #fff;
 	padding-left: 20px;
 	font-family: "inter", sans-serif;
+	box-shadow: 0px -4px 28px rgba(51, 51, 51, 0.25);
 	.home-icon {
 		width: 35px;
 		height: 30px;

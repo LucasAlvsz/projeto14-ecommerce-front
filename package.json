@@ -3,6 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
+		"@lottiefiles/react-lottie-player": "^3.4.7",
 		"axios": "^0.27.2",
 		"joi": "^17.6.0",
 		"react": "^17.0.2",
