@@ -11,6 +11,7 @@ export const HomeFooter = styled.footer`
 	justify-content: space-around;
 	align-items: center;
 	background-color: #fff;
+	box-shadow: 0px -4px 28px rgba(51, 51, 51, 0.25);
 	.home-icon {
 		width: 35px;
 		height: 30px;

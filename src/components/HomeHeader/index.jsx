@@ -1,4 +1,4 @@
-import { useState, useRef } from "react"
+import { useRef } from "react"
 import { Player } from "@lottiefiles/react-lottie-player"
 
 import { ReactComponent as SearchIcon } from "../../assets/icons/search.svg"
