@@ -4,7 +4,7 @@ export default function Product({ images, name, price, type }) {
 	if (type === "highlight-product")
 		return (
 			<S.HighlightProduct className={type}>
-				<img src={images[0]} alt="" />
+				<img src={images?.[0]} alt="" />
 				<S.ProductName>{name}</S.ProductName>
 				<div className="line"></div>
 				<S.ProductPrice>R$ {price}</S.ProductPrice>
@@ -12,7 +12,7 @@ export default function Product({ images, name, price, type }) {
 		)
 	return (
 		<S.Product className={type}>
-			<img src={images[0]} alt="" />
+			<img src={images?.[0]} alt="" />
 			<S.ProductName>{name}</S.ProductName>
 			<div className="line"></div>
 			<S.ProductPrice>R$ {price}</S.ProductPrice>

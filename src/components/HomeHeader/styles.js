@@ -10,6 +10,7 @@ export const Header = styled.header`
 	justify-content: space-between;
 	background-color: transparent;
 	padding: 23px 12px;
+	font-family: "Inter", sans-serif;
 	.logo-icon {
 		width: 50px;
 		height: 50px;
@@ -45,6 +46,35 @@ export const SearchBarContainer = styled.div`
 		left: 9px;
 	}
 `
+export const SearchResults = styled.div`
+	width: 100%;
+	max-height: 300px;
+	position: absolute;
+	top: 30px;
+	left: 0;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	overflow-y: auto;
+	font-size: 14px;
+	font-weight: 500;
+	color: #333333;
+	h3 {
+		font-size: 14px;
+		font-weight: 500;
+	}
+	.search-result-item {
+		width: 100%;
+		height: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-bottom: 1px solid #e6e6e6;
+		margin-top: 10px;
+	}
+`
+
 export const SideIconsContainer = styled.div`
 	width: 80px;
 	height: 100%;
