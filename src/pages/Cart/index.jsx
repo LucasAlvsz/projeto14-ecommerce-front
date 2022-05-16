@@ -97,7 +97,14 @@ export default function Cart() {
 							})}
 						</p>
 					</S.Total>
-					<S.CloseOrder>Fechar Pedido</S.CloseOrder>
+					<S.CloseOrder
+						onClick={() =>
+							navigate("/checkout", {
+								state: { total, userCartProducts },
+							})
+						}>
+						Fechar Pedido
+					</S.CloseOrder>
 				</S.CartFooter>
 			)}
 		</>
