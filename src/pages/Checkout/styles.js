@@ -212,6 +212,4 @@ export const PaymentContainer = styled.div`
   }
 `
 
-export const Product = styled.div`
-  width: ;
-`
+export const Product = styled.div``

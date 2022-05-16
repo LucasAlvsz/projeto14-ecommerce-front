@@ -1,5 +1,5 @@
 import Accordion from "../../../components/Accordion"
-import Product from "../../../components/Product"
+import ProductItem from "../../../components/ProductItem"
 import * as S from "./../styles"
 
 function contactDetails(props) {
@@ -49,7 +49,7 @@ function contactDetails(props) {
         <h3>Product Details</h3>
         <div>
           {props.products.map((product, index) => (
-            <Product
+            <ProductItem
               key={product.product._id}
               image={product.product.image}
               name={product.product.name}

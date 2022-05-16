@@ -1,6 +1,6 @@
 import * as S from "./styles"
 
-export default function Product(props) {
+export default function ProductItem(props) {
   return (
     <S.Product>
       <img src={props.image} alt="" />

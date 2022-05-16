@@ -82,8 +82,6 @@ export default function Checkout(props) {
     }
   }
 
-  async function sendData() {}
-
   function updateStep(step) {
     setCurrentStep(step)
   }
