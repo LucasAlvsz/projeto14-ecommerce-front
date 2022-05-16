@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import { Link, useParams } from "react-router-dom"
 
 import HomeHeader from "../../components/HomeHeader"
+import HomeFooter from "../../components/HomeFooter"
 import Product from "../../components/Product"
 
 import * as S from "./styles"
@@ -39,6 +40,7 @@ export default function Search() {
 						))}
 				</S.SearchResultsContainer>
 			</S.Main>
+			<HomeFooter />
 		</>
 	)
 }

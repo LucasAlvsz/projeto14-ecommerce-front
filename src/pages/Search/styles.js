@@ -2,16 +2,17 @@ import styled from "styled-components"
 
 export const Main = styled.main`
 	width: 100%;
-	height: calc(100vh - 60px);
+	height: calc(100vh - 120px);
 	display: flex;
 	flex-direction: column;
 	overflow-y: auto;
 	font-family: "Inter", sans-serif;
 	margin-top: 60px;
+	margin-bottom: 65px;
 `
 export const SearchResultsContainer = styled.div`
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	display: flex;
 	flex-wrap: wrap;
 	padding: 13px 0px 0 5px;
