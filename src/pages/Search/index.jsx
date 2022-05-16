@@ -20,7 +20,7 @@ export default function Search() {
 				setProducts(data)
 			})
 			.catch(error => console.log(error))
-	}, [])
+	}, [keyword])
 	return (
 		<>
 			<HomeHeader />

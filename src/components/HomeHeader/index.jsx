@@ -69,7 +69,10 @@ export default function HomeHeader() {
 							<div
 								key={_id}
 								className="search-result-item"
-								onClick={() => navigate(`/search/${name}`)}>
+								onClick={() => {
+									setSearchOpen(false)
+									navigate(`/search/${name}`)
+								}}>
 								<p>{name}</p>
 							</div>
 						))}
