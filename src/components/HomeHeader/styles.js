@@ -16,6 +16,17 @@ export const Header = styled.header`
 		height: 50px;
 		margin-right: 15px;
 	}
+	.person-icon {
+		width: 20px;
+		height: 20px;
+		color: #333;
+	}
+	.loggout-icon {
+		width: 30px;
+		height: 30px;
+		color: #333;
+		padding-left: 5px;
+	}
 `
 export const SearchBarContainer = styled.div`
 	width: 100%;

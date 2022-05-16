@@ -18,7 +18,6 @@ export default function Search() {
 			)
 			.then(({ data }) => {
 				setProducts(data)
-				console.log(data)
 			})
 			.catch(error => console.log(error))
 	}, [])

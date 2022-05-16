@@ -1,17 +1,17 @@
 import axios from "axios"
-import { useRef, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { Player } from "@lottiefiles/react-lottie-player"
 
+import { getItem, removeItem } from "../../utils/"
 import { ReactComponent as SearchIcon } from "../../assets/icons/search.svg"
 import { ReactComponent as LogoIcon } from "../../assets/icons/logo.svg"
-import menuAnimation from "../../assets/animations/menuAnimation.json"
+import { ReactComponent as LoggoutIcon } from "../../assets/icons/loggout.svg"
+import { ReactComponent as PersonIcon } from "../../assets/icons/person.svg"
 
 import * as S from "./styles"
 
 export default function HomeHeader() {
 	const navigate = useNavigate()
-	const menuRef = useRef(null)
 	const [searchOpen, setSearchOpen] = useState(false)
 	const [search, setSearch] = useState("")
 	const [searchResult, setSearchResult] = useState([])
@@ -29,6 +29,18 @@ export default function HomeHeader() {
 				.catch(error => console.log(error))
 		}
 	}, [update])
+	const signOut = () => {
+		const { token } = getItem("auth")
+		removeItem("auth")
+		axios
+			.post(`${process.env.REACT_APP_URI}/sign-out`, "", {
+				headers: {
+					Authorization: `Bearer ${token}`,
+				},
+			})
+			.then(() => setUpdate(!update))
+			.catch(error => console.log(error))
+	}
 	return (
 		<S.Header>
 			<LogoIcon className="logo-icon" />
@@ -40,8 +52,10 @@ export default function HomeHeader() {
 					type="text"
 					placeholder="Pesquisar..."
 					onChange={e => {
-						if (e.target.value === "") setSearchOpen(false)
-						else {
+						if (e.target.value === "") {
+							setSearchResult("")
+							setSearchOpen(false)
+						} else {
 							setSearchOpen(true)
 							setSearch(e.target.value)
 							if (e.target.value.length > 2) setUpdate(!update)
@@ -64,14 +78,17 @@ export default function HomeHeader() {
 			</S.SearchBarContainer>
 			<S.SideIconsContainer>
 				<S.SideIconEllipse>
-					<div
-						className="menu-icon"
-						onClick={() => menuRef.current.play()}>
-						<Player
-							ref={menuRef}
-							src={menuAnimation}
-							style={S.Menu}></Player>
-					</div>
+					{getItem("auth") ? (
+						<LoggoutIcon
+							className="loggout-icon"
+							onClick={() => signOut()}
+						/>
+					) : (
+						<PersonIcon
+							className="person-icon"
+							onClick={() => navigate("/sign-in")}
+						/>
+					)}
 				</S.SideIconEllipse>
 			</S.SideIconsContainer>
 		</S.Header>
