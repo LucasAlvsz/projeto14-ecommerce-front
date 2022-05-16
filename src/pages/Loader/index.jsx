@@ -1,9 +1,7 @@
 import { Player } from "@lottiefiles/react-lottie-player"
 import { useNavigate } from "react-router-dom"
-import { useRef } from "react"
 
 import logoAnimation from "../../assets/animations/logoAnimation.json"
-import cartAnimation from "../../assets/animations/cartAnimation.json"
 
 import * as S from "./styles"
 
