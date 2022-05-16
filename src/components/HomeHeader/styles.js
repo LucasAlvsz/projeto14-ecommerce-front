@@ -63,35 +63,6 @@ export const SideIconEllipse = styled.div`
 	margin-left: 20px;
 `
 
-export const SalesContainer = styled.div`
-	width: 100%;
-	height: 130px;
-	position: relative;
-	top: 0;
-	background-color: #000;
-	img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-	.ellipses-container {
-		width: 75px;
-		height: 10px;
-		display: flex;
-		align-items: center;
-		position: absolute;
-		bottom: 5px;
-		left: 43%;
-		gap: 25px;
-		.ellipse {
-			width: 5px;
-			height: 5px;
-			border-radius: 50%;
-			background-color: #fff;
-		}
-	}
-`
-
 export const Menu = {
 	width: "20px",
 	height: "20px",

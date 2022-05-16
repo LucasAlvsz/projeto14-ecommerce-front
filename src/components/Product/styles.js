@@ -44,15 +44,13 @@ export const ProductPrice = styled.p`
 	color: #333333;
 `
 export const HighlightProduct = styled.div`
-	width: calc(50% - 5px);
-	height: 240px;
+	width: 100%;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
 	padding: 10px;
-	margin-right: 5px;
-	margin-bottom: 5px;
 	background: #fff;
 	box-shadow: rgba(220, 220, 220, 0.45) 0px 5px 5px;
 	border-radius: 6px;

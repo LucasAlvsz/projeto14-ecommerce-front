@@ -1,6 +1,6 @@
 import * as S from "./styles"
 
-export default function Product({ id, images, name, price, type }) {
+export default function Product({ images, name, price, type }) {
 	if (type === "highlight-product")
 		return (
 			<S.HighlightProduct className={type}>

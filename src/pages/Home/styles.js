@@ -30,7 +30,7 @@ export const CategoriesContainer = styled.div`
 
 export const ProductsContainer = styled.div`
 	width: 100vw;
-	height: 270px;
+	height: 280px;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -55,5 +55,11 @@ export const HighlightsContainer = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	padding: 13px 0px 0 5px;
+	a {
+		width: calc(50% - 5px);
+		height: 240px;
+		margin-right: 5px;
+		margin-bottom: 5px;
+	}
 `
 export const Highlight = styled.div``

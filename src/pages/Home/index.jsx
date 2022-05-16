@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
-import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 import HomeHeader from "../../components/HomeHeader"
 import HomeFooter from "../../components/HomeFooter"
@@ -9,7 +9,6 @@ import Product from "../../components/Product"
 import * as S from "./styles"
 
 export default function Home() {
-	const navigate = useNavigate()
 	const [products, setProducts] = useState([])
 	useEffect(() => {
 		axios
@@ -40,16 +39,14 @@ export default function Home() {
 						{products.map(
 							({ _id, images, name, price, categories }) =>
 								categories.includes("notebooks") ? (
-									<Product
-										key={_id}
-										id={_id}
-										images={images}
-										name={name}
-										price={price}
-										onClick={() =>
-											navigate(`/product/:${_id}`)
-										}
-									/>
+									<Link to={`/product/${_id}`} key={_id}>
+										<Product
+											id={_id}
+											images={images}
+											name={name}
+											price={price}
+										/>
+									</Link>
 								) : null
 						)}
 					</S.ProductsContainer>
@@ -60,13 +57,15 @@ export default function Home() {
 						{products.map(
 							({ _id, images, name, price, categories }) =>
 								categories.includes("headsets") ? (
-									<Product
-										key={_id}
-										id={_id}
-										images={images}
-										name={name}
-										price={price}
-									/>
+									<Link to={`/product/${_id}`} key={_id}>
+										<Product
+											key={_id}
+											id={_id}
+											images={images}
+											name={name}
+											price={price}
+										/>
+									</Link>
 								) : null
 						)}
 					</S.ProductsContainer>
@@ -75,14 +74,15 @@ export default function Home() {
 					<p className="categorie">Destaques</p>
 					<S.HighlightsContainer>
 						{products.map(({ _id, images, name, price }) => (
-							<Product
-								type="highlight-product"
-								key={_id}
-								id={_id}
-								images={images}
-								name={name}
-								price={price}
-							/>
+							<Link to={`/product/${_id}`} key={_id}>
+								<Product
+									type="highlight-product"
+									id={_id}
+									images={images}
+									name={name}
+									price={price}
+								/>
+							</Link>
 						))}
 					</S.HighlightsContainer>
 				</S.CategoriesContainer>

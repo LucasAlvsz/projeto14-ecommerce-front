@@ -9,7 +9,6 @@ import * as S from "./styles"
 
 export default function HomeHeader() {
 	const menuRef = useRef(null)
-	const logoRef = useRef(null)
 	return (
 		<S.Header>
 			<LogoIcon className="logo-icon" />
