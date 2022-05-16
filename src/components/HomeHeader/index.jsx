@@ -53,7 +53,7 @@ export default function HomeHeader() {
 					placeholder="Pesquisar..."
 					onChange={e => {
 						if (e.target.value === "") {
-							setSearchResult("")
+							setSearchResult([])
 							setSearchOpen(false)
 						} else {
 							setSearchOpen(true)
