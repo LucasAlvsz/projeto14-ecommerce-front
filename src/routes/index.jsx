@@ -8,6 +8,7 @@ import Search from "../pages/Search"
 import SignUp from "../pages/SignUp"
 import SignIn from "../pages/SignIn"
 import Checkout from "../pages/Checkout"
+import UserPage from "../pages/UserPage"
 
 export default function Router() {
   return (
@@ -21,6 +22,8 @@ export default function Router() {
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/user" element={<UserPage />} />
+        <Route path="/categories" element={<UserPage />} />
       </Routes>
     </BrowserRouter>
   )

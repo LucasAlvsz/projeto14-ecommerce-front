@@ -57,10 +57,6 @@ export default function Checkout() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // useEffect(() => {
-  //   console.log(checkoutInfo)
-  // }, [checkoutInfo])
-
   const getCart = async (token) => {
     let timeoutId = null
     if (token) {
@@ -72,7 +68,6 @@ export default function Checkout() {
         setProducts(data)
         getAllInfoAboutProducts(data)
       } catch (e) {
-        console.log(e.response.data)
         if (e.response.status === 401) {
           removeItem("auth")
           navigate("/sign-in", { replace: true })
@@ -114,20 +109,12 @@ export default function Checkout() {
     if (e === "parcel" || e === "paymentType") {
       let newCheckoutInfo = {}
 
-      if (e === "paymentType")
-        newCheckoutInfo = {
-          ...checkoutInfo,
-          paymentType: val,
-        }
-      else
-        newCheckoutInfo = {
-          ...checkoutInfo,
-          parcel: val,
-        }
+      newCheckoutInfo = {
+        ...checkoutInfo,
+        [e]: val,
+      }
 
       setCheckoutInfo(newCheckoutInfo)
-
-      return
     }
 
     const name = e.target.name
@@ -140,7 +127,9 @@ export default function Checkout() {
     }
 
     if (name === "name") value = value.replace(/\d/g, "")
-    setCheckoutInfo({ ...checkoutInfo, [name]: value })
+
+    const newCheckoutInfo = { ...checkoutInfo, [name]: value }
+    setCheckoutInfo(newCheckoutInfo)
   }
 
   const handleCheckout = async (loading) => {
@@ -176,6 +165,7 @@ export default function Checkout() {
             currentStep={currentStep}
             updateStep={updateStep}
             info={checkoutInfo}
+            setCheckoutInfo={setCheckoutInfo}
           />
         )}
 
@@ -215,6 +205,21 @@ export default function Checkout() {
             </Button>
           </S.Notice>
         )}
+
+        {currentStep < 3 && (
+          <S.ButtonNext
+            className={
+              checkoutInfo.name?.length > 2 &&
+              checkoutInfo.address?.length &&
+              checkoutInfo.contact?.length > 10
+                ? ""
+                : "disabled"
+            }
+            onClick={() => updateStep(currentStep + 1)}
+          >
+            Próximo
+          </S.ButtonNext>
+        )}
       </>
     )
   }
@@ -229,7 +234,7 @@ export default function Checkout() {
           </S.Header>
 
           {loading && (
-            <S.LoaderContainer>
+            <S.LoaderContainer className="loader">
               <Player
                 src={logoAnimation}
                 style={S.cart}

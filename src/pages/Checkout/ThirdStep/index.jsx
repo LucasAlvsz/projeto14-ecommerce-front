@@ -6,6 +6,11 @@ import * as S from "./../styles"
 
 function contactDetails(props) {
   const { name, contact, address, paymentType, parcel } = props.checkoutInfo
+  const paymentName = {
+    ticket: "boleto",
+    credit: "cartão de crédito",
+    cash: "à vista",
+  }
 
   const format = {
     minimumFractionDigits: 2,
@@ -35,7 +40,7 @@ function contactDetails(props) {
         <div>
           <div className="item-container">
             <p className="item">Tipo</p>
-            <p className="value">{paymentType}</p>
+            <p className="value">{paymentName[paymentType]}</p>
           </div>
           <div className="item-container">
             <p className="item">Parcela(s)</p>

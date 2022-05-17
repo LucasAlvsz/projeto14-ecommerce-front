@@ -7,9 +7,9 @@ const Step = (props) => {
 
     if (condition) {
       if (
-        props.info.name?.length &&
+        props.info.name?.length > 2 &&
         props.info.address?.length &&
-        props.info.contact?.length
+        props.info.contact?.length > 10
       ) {
         props.updateStep(props.index + 1)
       }

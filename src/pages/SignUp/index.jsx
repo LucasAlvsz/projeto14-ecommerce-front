@@ -100,7 +100,7 @@ const SignUp = () => {
           onChange={handleChange}
           value={form.name}
           pattern="[a-zA-Z0-9]{3,}"
-          placeholder="Nome"
+          placeholder="Primeiro nome"
           disabled={loading}
           required
         />

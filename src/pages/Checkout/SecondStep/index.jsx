@@ -46,11 +46,11 @@ export default function SecondStep(props) {
         const name = e.currentTarget.name
 
         setPayment(name)
+        console.log(name)
 
-        if (name === "credit") {
-          props.handleCheckoutInfo("paymentType", name)
-        } else if (name === "ticket" || name === "cash") {
-          props.handleCheckoutInfo("paymentType", name)
+        props.handleCheckoutInfo("paymentType", name)
+
+        if (name !== "credit") {
           props.handleCheckoutInfo("parcel", 1)
         }
       }
