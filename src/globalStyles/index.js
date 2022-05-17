@@ -44,5 +44,7 @@ export default createGlobalStyle`
     ::-webkit-scrollbar {
 		width: 0px;
     }
-	
+    .overlap {
+        z-index: 5;
+    }	
 `

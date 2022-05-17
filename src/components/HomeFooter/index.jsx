@@ -9,24 +9,25 @@ import { ReactComponent as PersonIcon } from "../../assets/icons/person.svg"
 import * as S from "./styles"
 
 export default function HomeFooter() {
-	const navigate = useNavigate()
-	const cartRef = useRef(null)
-	return (
-		<S.HomeFooter>
-			<HomeIcon className="home-icon" onClick={() => navigate("/home")} />
-			<div
-				className="cart-icon"
-				onClick={() => {
-					cartRef.current.play()
-					navigate("/cart")
-				}}>
-				<Player
-					ref={cartRef}
-					src={cartAnimation}
-					style={S.Cart}></Player>
-			</div>
-			<CategoriesIcon className="categories-icon" />
-			<PersonIcon className="person-icon" />
-		</S.HomeFooter>
-	)
+  const navigate = useNavigate()
+  const cartRef = useRef(null)
+  return (
+    <S.HomeFooter>
+      <HomeIcon className="home-icon" onClick={() => navigate("/home")} />
+      <div
+        className="cart-icon"
+        onClick={() => {
+          cartRef.current.play()
+          navigate("/cart")
+        }}
+      >
+        <Player ref={cartRef} src={cartAnimation} style={S.Cart}></Player>
+      </div>
+      <CategoriesIcon
+        className="categories-icon"
+        onClick={() => navigate("/categories")}
+      />
+      <PersonIcon className="person-icon" onClick={() => navigate("/user")} />
+    </S.HomeFooter>
+  )
 }
